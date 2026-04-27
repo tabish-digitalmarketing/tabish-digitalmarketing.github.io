@@ -185,6 +185,26 @@ section{padding:90px 6%}
 .fn{text-align:center;font-size:12px;color:var(--gray);margin-top:10px}
 .fsuc{display:none;text-align:center;padding:24px;color:var(--green);font-size:15px;font-weight:500;line-height:1.7}
 
+/* ── FAQ SECTION (NEW) ── */
+#faq{background:#ffffff;border-top:1px solid #e8e8e8;padding:90px 6%}
+#faq .sh .sl{color:var(--gold)}
+#faq .sh h2{color:#111}
+#faq .sh h2 em{color:var(--gold);font-style:normal}
+#faq .sh p{color:#666}
+.faq-wrap{max-width:780px;margin:0 auto}
+.faq-item{border:1px solid #e5e5e5;border-radius:12px;margin-bottom:10px;overflow:hidden;transition:border-color .3s}
+.faq-item:hover{border-color:#D4A017}
+.faq-item.open{border-color:#D4A017;box-shadow:0 2px 16px rgba(212,160,23,.1)}
+.faq-q{width:100%;background:#ffffff;border:none;padding:20px 22px;display:flex;align-items:center;justify-content:space-between;cursor:pointer;text-align:left;gap:16px}
+.faq-q:hover{background:#fffdf5}
+.faq-q span{font-family:var(--font-h);font-size:15px;font-weight:600;color:#111;line-height:1.45}
+.faq-icon{width:26px;height:26px;border-radius:50%;background:#fff7e0;border:1px solid rgba(212,160,23,.4);display:flex;align-items:center;justify-content:center;color:var(--gold);font-size:17px;font-weight:400;flex-shrink:0;transition:transform .3s,background .3s}
+.faq-item.open .faq-icon{transform:rotate(45deg);background:#D4A017;color:#000;border-color:#D4A017}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .4s ease}
+.faq-item.open .faq-a{max-height:260px}
+.faq-a-inner{padding:0 22px 20px;border-top:1px solid #f0f0f0}
+.faq-a-inner p{padding-top:16px;color:#555;font-size:14px;line-height:1.8}
+
 /* FOOTER */
 footer{background:var(--bg);border-top:1px solid var(--border);padding:56px 6% 28px}
 .ft{max-width:1160px;margin:0 auto}
@@ -240,7 +260,9 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:56px 6% 2
   .stats-g{grid-template-columns:1fr 1fr}
   .ft-bot{flex-direction:column;text-align:center}
 }
-#process .sh h2{color:#111 !important} #process .sh p{color:#555 !important} #about .sl2{color:var(--gold)} .about-content h2{color:#111} </style>
+#process .sh h2{color:#111 !important} #process .sh p{color:#555 !important} #about .sl2{color:var(--gold)} .about-content h2{color:#111}
+</style>
+
 <!-- Person Schema -->
 <script type="application/ld+json">
 {
@@ -250,17 +272,12 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:56px 6% 2
   "url": "https://tabish-digitalmarketing.github.io/",
   "image": "https://tabish-digitalmarketing.github.io/profile.jpg",
   "jobTitle": "Digital Marketing Consultant",
-  "sameAs": [
-    "https://www.linkedin.com/in/yourprofile"
-  ],
-  "worksFor": {
-    "@type": "Organization",
-    "name": "Freelance"
-  }
+  "sameAs": ["https://www.linkedin.com/in/yourprofile"],
+  "worksFor": {"@type": "Organization","name": "Freelance"}
 }
 </script>
-<!-- Professional Service Schema Schema -->
-  <script type="application/ld+json">
+<!-- Professional Service Schema -->
+<script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
@@ -270,16 +287,11 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:56px 6% 2
   "telephone": "+923333226024",
   "priceRange": "$$",
   "areaServed": "Worldwide",
-  "serviceType": [
-    "Meta Ads",
-    "Google Ads",
-    "SEO",
-    "Lead Generation"
-  ]
+  "serviceType": ["Meta Ads","Google Ads","SEO","Lead Generation"]
 }
 </script>
-  <!-- local business Schema -->
-  <script type="application/ld+json">
+<!-- Local Business Schema -->
+<script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
@@ -287,10 +299,7 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:56px 6% 2
   "image": "https://tabish-digitalmarketing.github.io/preview.jpg",
   "url": "https://tabish-digitalmarketing.github.io/",
   "telephone": "+92XXXXXXXXXX",
-  "address": {
-    "@type": "PostalAddress",
-    "addressCountry": "PK"
-  }
+  "address": {"@type": "PostalAddress","addressCountry": "PK"}
 }
 </script>
 <script type="application/ld+json">
@@ -301,6 +310,81 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:56px 6% 2
   "url": "https://tabish-digitalmarketing.github.io/"
 }
 </script>
+
+<!-- ── FAQ SCHEMA (NEW) ── -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What does a digital marketing consultant do in Pakistan?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A digital marketing consultant in Pakistan helps businesses grow online through paid ads, SEO, and lead generation strategies. I run Meta Ads, Google Ads, and Local SEO campaigns that generate qualified leads and measurable revenue — turning your marketing budget into a predictable lead generation system."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much do Meta Ads and Google Ads cost for small businesses in Pakistan?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "For small businesses in Pakistan, a realistic starting ad budget is PKR 30,000–80,000/month for Meta Ads and PKR 50,000–150,000/month for Google Ads. Management fees depend on campaign scope. I optimize every campaign for the lowest cost-per-lead possible."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How long does it take to see results from Meta Ads or Google Ads?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Google Ads generate leads within 3–7 days of launch. Meta Ads take 2–4 weeks to exit the learning phase and deliver consistent results. SEO takes 3–6 months for significant ranking improvements."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the best digital marketing strategy for lead generation in Pakistan?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The most effective strategy combines Google Search Ads for high-intent buyers, Meta Ads retargeting for warm audiences, and Local SEO to dominate Google Maps and local search results. This 3-channel approach delivers the lowest cost-per-lead and highest conversion rates."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you offer Meta Ads management services for e-commerce businesses in Pakistan?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. I manage Meta Ads for e-commerce businesses in Pakistan including product catalog ads, dynamic retargeting, conversion-optimized creatives, and full-funnel strategies with measurable ROAS (Return on Ad Spend)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I rank my business on Google in Pakistan without paying for ads?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "To rank organically on Google in Pakistan, optimize your Google Business Profile, build local citations, get genuine client reviews, publish keyword-optimized content, and build backlinks. This takes 3–6 months but delivers free compounding traffic. I offer Local SEO packages for Lahore, Karachi, and Islamabad."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What results can I realistically expect from hiring a digital marketing consultant?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Realistic results include 30–60% reduction in cost-per-lead within 90 days, 2–5x increase in qualified leads, first-page Google rankings for local keywords within 4–6 months, and measurable revenue growth with transparent monthly reporting."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I hire a freelance digital marketing expert in Pakistan?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Book a free strategy call first. I will audit your current marketing, identify growth opportunities, and propose a strategy with clear KPIs. Contact via WhatsApp at +92 333 3208024 or use the contact form on this page."
+      }
+    }
+  ]
+}
+</script>
+
 </head>
 <body>
 
@@ -311,6 +395,7 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:56px 6% 2
     <li><a href="#services">Services</a></li>
     <li><a href="#about">About</a></li>
     <li><a href="#process">Approach</a></li>
+    <li><a href="#faq">FAQ</a></li>
     <li><a href="#contact" class="nav-btn">Get Free Consultation</a></li>
   </ul>
   <button class="ham" onclick="document.getElementById('mn').classList.toggle('open')" aria-label="Menu">
@@ -321,6 +406,7 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:56px 6% 2
   <a href="#services" onclick="this.closest('.mob-nav').classList.remove('open')">Services</a>
   <a href="#about" onclick="this.closest('.mob-nav').classList.remove('open')">About</a>
   <a href="#process" onclick="this.closest('.mob-nav').classList.remove('open')">Approach</a>
+  <a href="#faq" onclick="this.closest('.mob-nav').classList.remove('open')">FAQ</a>
   <a href="#contact" onclick="this.closest('.mob-nav').classList.remove('open')" style="color:var(--gold);font-weight:700">Get Free Consultation →</a>
 </div>
 
@@ -335,9 +421,7 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:56px 6% 2
       <a href="#services" class="btn-s">Explore Services</a>
     </div>
     <div class="proof">
-      <div class="avs">
-        <i>A</i><i>M</i><i>R</i><i>S</i>
-      </div>
+      <div class="avs"><i>A</i><i>M</i><i>R</i><i>S</i></div>
       <span>⭐ Trusted by <strong style="color:#fff">50+ businesses</strong></span>
     </div>
   </div>
@@ -513,6 +597,82 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:56px 6% 2
   </div>
 </section>
 
+<!-- ── FAQ SECTION (NEW — WHITE BACKGROUND) ── -->
+<section id="faq">
+  <div class="sh fu">
+    <div class="sl">— FAQ</div>
+    <h2>Frequently Asked <em>Questions</em></h2>
+    <p>Everything you need to know about working with a performance marketing expert in Pakistan.</p>
+  </div>
+  <div class="faq-wrap">
+
+    <div class="faq-item fu">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        <span>What does a digital marketing consultant do in Pakistan?</span>
+        <div class="faq-icon">+</div>
+      </button>
+      <div class="faq-a"><div class="faq-a-inner"><p>A digital marketing consultant in Pakistan helps businesses grow online through paid ads, SEO, and lead generation strategies. I run Meta Ads (Facebook & Instagram), Google Ads, and Local SEO campaigns that generate qualified leads and measurable revenue — turning your marketing budget into a predictable lead generation system.</p></div></div>
+    </div>
+
+    <div class="faq-item fu" style="transition-delay:.05s">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        <span>How much do Meta Ads and Google Ads cost for small businesses in Pakistan?</span>
+        <div class="faq-icon">+</div>
+      </button>
+      <div class="faq-a"><div class="faq-a-inner"><p>For small businesses in Pakistan, a realistic starting ad budget is PKR 30,000–80,000/month for Meta Ads and PKR 50,000–150,000/month for Google Ads. My management fee is separate and depends on campaign scope. The key is not how much you spend — it's how efficiently we convert that spend into leads and sales. I optimize every campaign for the lowest cost-per-lead possible.</p></div></div>
+    </div>
+
+    <div class="faq-item fu" style="transition-delay:.1s">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        <span>How long does it take to see results from Meta Ads or Google Ads?</span>
+        <div class="faq-icon">+</div>
+      </button>
+      <div class="faq-a"><div class="faq-a-inner"><p>Google Ads typically generate leads within 3–7 days of launch. Meta Ads take 2–4 weeks to exit the learning phase and deliver consistent results. SEO takes 3–6 months for significant ranking improvements. I recommend starting with paid ads for fast results while building SEO for long-term organic growth simultaneously.</p></div></div>
+    </div>
+
+    <div class="faq-item fu" style="transition-delay:.15s">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        <span>What is the best digital marketing strategy for lead generation in Pakistan?</span>
+        <div class="faq-icon">+</div>
+      </button>
+      <div class="faq-a"><div class="faq-a-inner"><p>The most effective lead generation strategy combines Google Search Ads (to capture high-intent buyers actively searching), Meta Ads retargeting (to convert warm audiences), and Local SEO (to dominate Google Maps). This 3-channel approach consistently delivers the lowest cost-per-lead and highest conversion rates compared to running any single channel alone.</p></div></div>
+    </div>
+
+    <div class="faq-item fu" style="transition-delay:.2s">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        <span>Do you offer Meta Ads management for e-commerce businesses in Pakistan?</span>
+        <div class="faq-icon">+</div>
+      </button>
+      <div class="faq-a"><div class="faq-a-inner"><p>Yes. I manage Meta Ads campaigns for e-commerce businesses in Pakistan — including product catalog ads, dynamic retargeting, conversion-optimized creatives, and full-funnel strategies from cold audience to purchase. I have hands-on experience scaling e-commerce brands with measurable ROAS (Return on Ad Spend).</p></div></div>
+    </div>
+
+    <div class="faq-item fu" style="transition-delay:.25s">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        <span>How do I rank my business on Google in Pakistan without paying for ads?</span>
+        <div class="faq-icon">+</div>
+      </button>
+      <div class="faq-a"><div class="faq-a-inner"><p>To rank organically on Google in Pakistan, optimize your Google Business Profile, build consistent local citations, get genuine client reviews, publish keyword-optimized content, and build backlinks from relevant Pakistani websites. This process takes 3–6 months but delivers free compounding traffic long-term. I offer complete Local SEO packages for Lahore, Karachi, and Islamabad.</p></div></div>
+    </div>
+
+    <div class="faq-item fu" style="transition-delay:.3s">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        <span>What results can I realistically expect from hiring a digital marketing consultant?</span>
+        <div class="faq-icon">+</div>
+      </button>
+      <div class="faq-a"><div class="faq-a-inner"><p>Based on my work with 50+ businesses: 30–60% reduction in cost-per-lead within 90 days, 2–5x increase in qualified leads from paid channels, first-page Google rankings for local keywords within 4–6 months, and measurable revenue growth. I share transparent monthly reports so you always know exactly what your investment is delivering.</p></div></div>
+    </div>
+
+    <div class="faq-item fu" style="transition-delay:.35s">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        <span>How do I hire a freelance digital marketing expert in Pakistan?</span>
+        <div class="faq-icon">+</div>
+      </button>
+      <div class="faq-a"><div class="faq-a-inner"><p>Book a free strategy call first — not commit to a retainer blindly. I'll audit your current marketing, identify your biggest growth opportunities, and propose a strategy with clear KPIs. You only proceed if the plan makes sense. Book your free consultation using the form above or WhatsApp me directly at +92 333 3208024.</p></div></div>
+    </div>
+
+  </div>
+</section>
+
 <!-- FOOTER -->
 <footer>
   <div class="ft">
@@ -595,16 +755,13 @@ document.querySelectorAll('a[href^="#"]').forEach(a=>{
   });
 });
 
-// Form — uses mailto fallback (works without backend)
-// To get real inbox delivery: go to formspree.io, create free form, replace YOUR_ID below
+// Form
 async function sendForm(e){
   e.preventDefault();
   const form=e.target,btn=document.getElementById('sbtn');
   btn.textContent='Sending...';btn.disabled=true;
   const d=Object.fromEntries(new FormData(form));
-
   try{
-    // Try Formspree first (free, replace YOUR_ID with your Formspree form ID)
     const r=await fetch('https://formspree.io/f/YOUR_FORM_ID',{
       method:'POST',
       headers:{'Content-Type':'application/json','Accept':'application/json'},
@@ -612,8 +769,6 @@ async function sendForm(e){
     });
     if(r.ok){showSuccess();return;}
   }catch(_){}
-
-  // Fallback: open default email client
   const sub=encodeURIComponent(`New Enquiry from ${d.name} — ${d.service}`);
   const body=encodeURIComponent(`Name: ${d.name}\nEmail: ${d.email}\nPhone: ${d.phone||'—'}\nService: ${d.service}\n\nMessage:\n${d.message||'—'}`);
   window.open(`mailto:tabish.syed82@gmail.com?subject=${sub}&body=${body}`);
@@ -622,6 +777,13 @@ async function sendForm(e){
 function showSuccess(){
   document.getElementById('cForm').style.display='none';
   document.getElementById('fsuc').style.display='block';
+}
+
+// ── FAQ TOGGLE (NEW) ──
+function toggleFaq(btn){
+  const item=btn.closest('.faq-item');
+  document.querySelectorAll('.faq-item').forEach(i=>{if(i!==item)i.classList.remove('open')});
+  item.classList.toggle('open');
 }
 </script>
 </body>
