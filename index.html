@@ -43,9 +43,10 @@
   --maxw:1160px;
 }
 *{box-sizing:border-box}
-html{scroll-behavior:smooth}
+html{scroll-behavior:smooth;overflow-x:hidden}
+body{overflow-x:hidden}
 body{margin:0;background:var(--paper);color:var(--ink);font-family:Inter,sans-serif;line-height:1.65;-webkit-font-smoothing:antialiased}
-a{color:inherit;text-decoration:none}
+a{color:inherit;text-decoration:none;overflow-wrap:anywhere}
 img{max-width:100%;display:block}
 h1,h2,h3,h4{font-family:Fraunces,serif;line-height:1.12}
 .wrap{width:min(var(--maxw),92%);margin:auto}
@@ -192,28 +193,61 @@ footer a:hover{color:var(--gold-soft)}
 /* RESPONSIVE */
 @media(max-width:980px){
   .hero-grid,.about-grid,.media-grid,.contact-grid{grid-template-columns:1fr}
+  .hero-grid>*,.about-grid>*,.media-grid>*,.contact-grid>*{min-width:0}
   .svc-grid{grid-template-columns:1fr 1fr}
   .proj-grid{grid-template-columns:1fr 1fr}
   .proc-grid{grid-template-columns:1fr 1fr}
-  .dash{max-width:650px}
+  .dash{max-width:650px;width:100%;margin-inline:auto}
+  .photo-badge{left:0}
 }
 @media(max-width:760px){
   section{padding:72px 0}
-  .links{display:none;position:absolute;top:72px;left:0;right:0;background:var(--ink);padding:18px 4%;flex-direction:column;align-items:flex-start;border-bottom:1px solid var(--line)}
+  .navrow{min-height:68px}
+  .links{
+    display:none;
+    position:absolute;
+    top:68px;
+    left:0;
+    right:0;
+    width:100%;
+    background:var(--ink);
+    padding:18px 4%;
+    flex-direction:column;
+    align-items:flex-start;
+    gap:14px;
+    border-bottom:1px solid var(--line);
+    box-shadow:0 14px 30px rgba(0,0,0,.18)
+  }
   .links.open{display:flex}
-  .navtoggle{display:block}
+  .links a{font-size:.9rem}
+  .navtoggle{display:block;cursor:pointer;padding:8px}
   .strip .wrap{grid-template-columns:1fr 1fr}
   .svc-grid,.proj-grid,.proc-grid{grid-template-columns:1fr}
   .credrow,.media-stats{grid-template-columns:1fr}
-  .hero{padding-top:112px}
+  .hero{padding-top:108px}
+  .hero h1{font-size:clamp(2.35rem,11vw,3.7rem)}
+  .lead{font-size:1rem}
+  .cta-row{width:100%}
+  .cta-row .btn{flex:1 1 180px}
+  .trustline{align-items:flex-start}
+  .photo-card img{aspect-ratio:1/1;object-fit:cover}
+  .photo-badge{left:0;bottom:-12px}
+  .project-note{grid-column:auto}
+  form.book{padding:22px}
+  form.book .row2{grid-template-columns:1fr}
 }
 @media(max-width:520px){
+  .wrap{width:min(92%,100%);max-width:100%}
+  section{padding:60px 0}
   .stat-grid{grid-template-columns:1fr}
+  .strip .wrap{grid-template-columns:1fr 1fr;gap:14px}
+  .strip b{font-size:1.5rem}
   .form-note{line-height:1.45}
-  form.book .row2{grid-template-columns:1fr}
   .foot-grid{grid-template-columns:1fr}
-  .trustline{align-items:flex-start}
-  .wa-float{right:16px;bottom:16px}
+  .wa-float{right:16px;bottom:16px;width:52px;height:52px}
+  .photo-badge{position:relative;left:0;bottom:auto;margin-top:12px;display:inline-block}
+  .faq-q{font-size:.92rem}
+  .faq-q .plus{flex-shrink:0}
 }
 </style>
 
@@ -235,7 +269,7 @@ footer a:hover{color:var(--gold-soft)}
 <header class="nav">
   <div class="navrow">
     <a href="#top" class="logo">SM<span>TABISH</span></a>
-    <button class="navtoggle" id="navToggle" aria-label="Toggle navigation">☰</button>
+    <button class="navtoggle" id="navToggle" type="button" aria-label="Toggle navigation" aria-controls="navLinks" aria-expanded="false">☰</button>
     <nav class="links" id="navLinks">
       <a href="#about">About</a>
       <a href="#services">Services</a>
@@ -423,7 +457,7 @@ footer a:hover{color:var(--gold-soft)}
       </div>
 
       <div class="proj-card">
-        <span class="tag">Pakistan · Appliances Manufacturer</span>
+        <span class="tag">Pakistan · Fragrance E-commerce</span>
         <h3>Snifz World</h3>
         <p>SEO audit and category-level search strategy with topical-authority planning, keyword research, product imagery direction and mobile conversion considerations.</p>
         <div class="stack"><span>SEO Audit</span><span>Category SEO</span><span>Keyword Strategy</span><span>Creative</span><span>CRO</span></div>
@@ -439,7 +473,7 @@ footer a:hover{color:var(--gold-soft)}
       </div>
 
       <div class="proj-card">
-        <span class="tag">UAE/KSA · E-commerce / Deals</span>
+        <span class="tag">Pakistan · E-commerce / Deals</span>
         <h3>KanzDeals</h3>
         <p>Project included in the broader e-commerce and digital marketing portfolio. Detailed case-study claims are intentionally not fabricated here where the source record does not provide a verified scope or metric.</p>
         <div class="stack"><span>E-commerce</span><span>Digital Marketing</span><span>Project Portfolio</span></div>
@@ -547,7 +581,7 @@ footer a:hover{color:var(--gold-soft)}
       <div style="margin-top:30px;">
         <div class="contact-item">
           <div class="ico">✉</div>
-          <div><b>Email</b><a href="mailto:tabishmuhammadsyed@gmail.com">tabishmuhammadsyed@gmail.com</a></div>
+          <div><b>Email</b><a href="mailto:tabish.syed82@gmail.com">tabish.syed82@gmail.com</a></div>
         </div>
         <div class="contact-item">
           <div class="ico">☎</div>
@@ -560,13 +594,17 @@ footer a:hover{color:var(--gold-soft)}
       </div>
     </div>
 
-    <form class="book" action="mailto:tabishmuhammadsyed@gmail.com" method="post" enctype="text/plain">
+    <form class="book" action="https://formsubmit.co/tabishmuhammadsyeed@gmail.com" method="POST">
+      <input type="hidden" name="_subject" value="New Portfolio Enquiry — Tabish Digital Marketing">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_captcha" value="true">
+      <input type="hidden" name="_next" value="https://tabish-digitalmarketing.github.io/?sent=1#contact">
       <div class="row2">
-        <div><label for="name">Name</label><input id="name" name="Name" required></div>
-        <div><label for="email">Email</label><input id="email" name="Email" type="email" required></div>
+        <div><label for="name">Name</label><input id="name" name="Name" autocomplete="name" required></div>
+        <div><label for="email">Email</label><input id="email" name="Email" type="email" autocomplete="email" required></div>
       </div>
       <label for="company">Company / Project</label>
-      <input id="company" name="Company / Project">
+      <input id="company" name="Company / Project" autocomplete="organization">
       <label for="service">Area</label>
       <select id="service" name="Area">
         <option>SEO / Local SEO</option>
@@ -578,9 +616,9 @@ footer a:hover{color:var(--gold-soft)}
         <option>International Job / Consulting</option>
       </select>
       <label for="message">Tell me about the requirement</label>
-      <textarea id="message" name="Message" placeholder="Business, market, current challenge and what you need help with..."></textarea>
+      <textarea id="message" name="Message" placeholder="Business, market, current challenge and what you need help with..." required></textarea>
       <button class="btn btn-primary" type="submit">Send Enquiry →</button>
-      <div class="form-note">Direct email form. If your browser does not open the email client, use the email address shown on this page.</div>
+      <div class="form-note">Your enquiry will be sent securely to my email. Please allow the first FormSubmit confirmation email when setting this up.</div>
     </form>
   </div>
 </section>
@@ -616,7 +654,7 @@ footer a:hover{color:var(--gold-soft)}
     </div>
     <div class="foot-bottom">
       <span>© 2026 Syed Muhammad Tabish. All rights reserved.</span>
-      <span><a href="mailto:tabishmuhammadsyed@gmail.com">Email</a> · <a href="https://www.linkedin.com/in/syedmtabish/" target="_blank" rel="noopener">LinkedIn</a></span>
+      <span><a href="mailto:tabish.syed82@gmail.com">Email</a> · <a href="https://www.linkedin.com/in/syedmtabish/" target="_blank" rel="noopener">LinkedIn</a></span>
     </div>
   </div>
 </footer>
@@ -626,8 +664,14 @@ footer a:hover{color:var(--gold-soft)}
 <script>
 const navToggle=document.getElementById('navToggle');
 const navLinks=document.getElementById('navLinks');
-navToggle.addEventListener('click',()=>navLinks.classList.toggle('open'));
-document.querySelectorAll('#navLinks a').forEach(a=>a.addEventListener('click',()=>navLinks.classList.remove('open')));
+navToggle.addEventListener('click',()=>{
+  const isOpen=navLinks.classList.toggle('open');
+  navToggle.setAttribute('aria-expanded',String(isOpen));
+});
+document.querySelectorAll('#navLinks a').forEach(a=>a.addEventListener('click',()=>{
+  navLinks.classList.remove('open');
+  navToggle.setAttribute('aria-expanded','false');
+}));
 
 document.querySelectorAll('.faq-item').forEach(item=>{
   item.querySelector('.faq-q').addEventListener('click',()=>{
@@ -638,5 +682,15 @@ document.querySelectorAll('.faq-item').forEach(item=>{
 });
 </script>
 
+<script>
+(function(){
+  const params = new URLSearchParams(window.location.search);
+  if(params.get('sent') === '1'){
+    const status = document.getElementById('form-status');
+    if(status) status.style.display = 'block';
+    window.history.replaceState({}, document.title, window.location.pathname + window.location.hash);
+  }
+})();
+</script>
 </body>
 </html>
